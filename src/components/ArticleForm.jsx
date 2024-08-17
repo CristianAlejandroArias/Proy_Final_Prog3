@@ -32,6 +32,7 @@ export default function ArticleForm() {
             onSubmit={handleSubmit}
         >
             <h1 style={{ color: 'red' }}>Agregar Noticia</h1>
+            
             <div className="field">
                 <label className="label">Name</label>
                 <div className="control">
