@@ -37,7 +37,7 @@ function ShowMyArticle() {
 
     return (
         <div>
-{/*             <h1>Detalle del ítem con ID: {id}</h1> */}
+
             <ArticleDetail article={article}/>
         </div>
     );

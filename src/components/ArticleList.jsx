@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
-//import SongCard from "./SongCard";
 import ArticleCard from "./ArticleCard";
 
 function ArticleList() {
     const [page, setPage] = useState(1);
-    const [articles, setArticles] = useState([]);//VAriable de estado de Songs
+    const [articles, setArticles] = useState([]);
     const [nextUrl, setNextUrl] = useState(null);
     const [isError, setIsError] = useState(false);
     const [isLoading, setIsLoading] = useState(false);

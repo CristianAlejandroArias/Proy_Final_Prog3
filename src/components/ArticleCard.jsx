@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { useAuth } from "../contexts/AuthContext";
 
 
 function ArticleCard({ article }) {
@@ -11,12 +11,17 @@ function ArticleCard({ article }) {
         image: "https://via.placeholder.com/800x400" // URL de ejemplo para la imagen
     };
 
-    // Usar el artículo pasado como prop o el predeterminado
-    const { title, content, image } = article || defaultArticle;
+ 
+    const { title, content, image, author } = article || defaultArticle;
     const navigate = useNavigate()
     const selectArticle = () => {
         navigate(`/article/${article.id}`)
     }
+
+    const { user__id } = useAuth("state")
+    const { token } = useAuth("actions")
+    const userIdAsNumber = parseInt(user__id, 10);
+    const isVisible = (userIdAsNumber == author);
 
     return (
         <div className="card has-background-dark" onClick={selectArticle} >
@@ -24,8 +29,8 @@ function ArticleCard({ article }) {
                 {/* Mostrar la imagen si existe */}
                 {image && (
                     <figure className="image">
-                        <img src={image} 
-                            alt={title} 
+                        <img src={image}
+                            alt={title}
                             style={{ width: '500%', maxWidth: '800px', height: 'auto' }}
                         />
                     </figure>
@@ -44,6 +49,20 @@ function ArticleCard({ article }) {
                     {/* Mostrar el contenido */}
                     <p>{content}</p>
                 </div>
+                <div>
+                {isVisible && (
+                    <button className="conditional-button">
+                        Modificar
+                    </button>
+                )}
+                {isVisible && (
+                    <button className="conditional-button">
+                        Eliminar
+                    </button>
+                )}
+
+                </div>
+
             </div>
         </div>
     );
