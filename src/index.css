@@ -66,3 +66,35 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Estilo ArticleDetail */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.content {
+  margin-top: 10px;
+}

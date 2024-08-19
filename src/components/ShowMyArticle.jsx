@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useParams } from 'react-router-dom';
 import ArticleCard from './ArticleCard';
+import ViewArticleCard from "./ViewArticleCard ";
+import ArticleDetail from "./ArticleDetail";
 
 const fetchArticleData = async (articleId) => {
     const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/infosphere/articles/${articleId}`);
@@ -35,8 +37,8 @@ function ShowMyArticle() {
 
     return (
         <div>
-            <h1>Detalle del ítem con ID: {id}</h1>
-            <ArticleCard article={article} />
+{/*             <h1>Detalle del ítem con ID: {id}</h1> */}
+            <ArticleDetail article={article}/>
         </div>
     );
 }
