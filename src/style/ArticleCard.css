@@ -1,0 +1,32 @@
+.card{
+    width: 1000px;
+    height: auto;
+    background-color:brown;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.button{
+    margin: 10px;
+    background-color: aquamarine;
+}
+
+.image1{
+    width: 500px;
+    max-height: 500px;   
+}
+
+.cardI{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.title{
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+}
