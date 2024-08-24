@@ -1,0 +1,49 @@
+/* Contenedor principal de la lista de artículos */
+.article-list-container {
+    background-color: #e0f7fa; /* Fondo gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    max-width: 800px; /* Ancho máximo */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+/* Título de la lista de artículos */
+.title {
+    color: #333; /* Color del texto oscuro */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Espaciado inferior */
+    font-size: 24px; /* Tamaño de fuente del título */
+}
+
+/* Contenedor de cada artículo */
+.article-card {
+    background-color: #ffffff; /* Fondo blanco para cada artículo */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    padding: 15px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espaciado inferior entre artículos */
+    display: flex; /* Usa flexbox para contenido interno */
+    flex-direction: column; /* Coloca el contenido en columna */
+}
+
+/* Contenedor del mensaje de carga o error */
+.message {
+    text-align: center; /* Centra el texto */
+    color: #0000ff; /* Color rojo para errores */
+    font-size: 18px; /* Tamaño de fuente del mensaje */
+    margin-top: 20px; /* Espaciado superior */
+}
+
+/* Estilo de los mensajes de carga */
+.loading-message {
+    color: #007bff; /* Color azul para el mensaje de carga */
+    font-size: 18px; /* Tamaño de fuente del mensaje */
+}
+.p {
+    color: #0000ff;
+
+}
+.content{
+    color: #0000ff;
+}

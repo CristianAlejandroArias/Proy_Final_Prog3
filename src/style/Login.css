@@ -39,6 +39,8 @@ label {
 
 .control {
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .icon {

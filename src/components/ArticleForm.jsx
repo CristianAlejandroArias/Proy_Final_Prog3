@@ -1,17 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import "../style/ArticleForm.css"; // Asegúrate de importar el archivo CSS
 
 export default function ArticleForm() {
     const { token } = useAuth("state");
     const navigate = useNavigate();
 
-    const [articleData, setAticleData] = useState({ title: "", content: "" });
+    const [articleData, setArticleData] = useState({ title: "", content: "" });
     const [articleImage, setArticleImage] = useState(null);
     const [submitting, setSubmitting] = useState(false);
 
     function handleInputChange(event) {
-        setAticleData({
+        setArticleData({
             ...articleData,
             [event.target.name]: event.target.value,
         });
@@ -19,7 +20,7 @@ export default function ArticleForm() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log("Enviando formulario.")
+        console.log("Enviando formulario.");
 
         const newForm = new FormData();
         newForm.append("title", articleData.title);
@@ -28,33 +29,29 @@ export default function ArticleForm() {
             newForm.append("image", articleImage);
         }
 
-        fetch(`${import.meta.env.VITE_API_BASE_URL}infosphere/articles/`,
-            {
-                method: "POST",
-                headers: {
-                    Authorization: `Token ${token}`,
-                },
-                body: newForm,
-
-            })
-            .then((response) => {
-                    if (!response.ok) {
-                        throw new Error("No se pudo crear el artículo");
-                    }
-                    return response.json();
-            })
-
-            .then((data) => {
-                alert('El artículo fue creado con éxito.');
-                navigate('/')
-            })
-
-            .catch((error) => {
-                console.error("Error error al crear el artículo", error);
-            })
-            .finally(() => {
-                return setSubmitting(false);
-            });
+        fetch(`${import.meta.env.VITE_API_BASE_URL}infosphere/articles/`, {
+            method: "POST",
+            headers: {
+                Authorization: `Token ${token}`,
+            },
+            body: newForm,
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("No se pudo crear el artículo");
+            }
+            return response.json();
+        })
+        .then((data) => {
+            alert('El artículo fue creado con éxito.');
+            navigate('/');
+        })
+        .catch((error) => {
+            console.error("Error al crear el artículo", error);
+        })
+        .finally(() => {
+            setSubmitting(false);
+        });
     }
 
     function handleImageChange(event) {
@@ -63,17 +60,16 @@ export default function ArticleForm() {
 
     return (
         <form
-            className={`box m-4 p-4 has-background-dark`}
+            className="form-container"
             onSubmit={handleSubmit}
         >
-            <h1 style={{ color: 'red' }}>Agregar Noticia</h1>
+            <h1>Agregar Noticia</h1>
 
             <div className="field">
-                <label className="label">Name</label>
+                <label className="label">Nombre</label>
                 <div className="control">
                     <input
                         className="input"
-                        //type="text"
                         name="title"
                         value={articleData.title}
                         onChange={handleInputChange}
@@ -86,7 +82,6 @@ export default function ArticleForm() {
                 <div className="control">
                     <textarea
                         className="textarea"
-                        //type="text"
                         name="content"
                         value={articleData.content}
                         onChange={handleInputChange}
@@ -109,9 +104,10 @@ export default function ArticleForm() {
             <div className="field">
                 <div className="control">
                     <button className="button is-primary" type="submit">
-                        Submit
+                        Enviar
                     </button>
                 </div>
             </div>
-        </form>);
+        </form>
+    );
 }

@@ -1,0 +1,55 @@
+/* Estilo general del formulario */
+.form-container {
+    background-color: #e0f7fa; /* Fondo gris claro para el formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 20px; /* Espaciado interno */
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centra el formulario horizontalmente */
+}
+
+/* Estilos para los encabezados */
+.form-container h1 {
+    color: #333; /* Color oscuro para el encabezado */
+    text-align: center; /* Centra el encabezado */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Estilos para las etiquetas */
+.label {
+    font-weight: bold; /* Etiquetas en negrita */
+    margin-bottom: 5px; /* Espaciado inferior */
+    display: block; /* Asegura que las etiquetas ocupen toda la línea */
+}
+
+/* Estilos para los campos de entrada */
+.input, .textarea {
+    width: 100%; /* Campos de entrada ocupan todo el ancho del contenedor */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    border: 1px solid #ccc; /* Borde gris claro */
+    box-sizing: border-box; /* Incluye el padding y borde en el ancho total */
+    margin-bottom: 15px; /* Espaciado inferior */
+}
+
+/* Estilos para el botón */
+.button.is-primary {
+    background-color: #007bff; /* Color de fondo azul */
+    color: white; /* Color del texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de la fuente */
+}
+
+.button.is-primary:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el cursor */
+}
+
+/* Estilos para mensajes de error */
+.error-message {
+    color: red; /* Color rojo para mensajes de error */
+    text-align: center; /* Centra el texto del mensaje */
+    margin-top: 10px; /* Espaciado superior */
+}

@@ -1,3 +1,70 @@
+/* Estilo general de la tarjeta */
+.card {
+    background-color: #e0f7fa; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 20px; /* Espaciado inferior */
+    overflow: hidden; /* Evita que los elementos salgan de la tarjeta */
+    cursor: pointer; /* Cambia el cursor al pasar sobre la tarjeta */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+.card:hover {
+    transform: scale(1.02); /* Escala ligeramente la tarjeta al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el ratón */
+}
+
+/* Contenido de la tarjeta */
+.media-content {
+    padding: 15px; /* Espaciado interno */
+}
+
+.title {
+    font-size: 1.25rem; /* Tamaño de fuente del título */
+    font-weight: bold; /* Negrita para el título */
+    color: #333; /* Color oscuro del texto */
+    margin: 0; /* Elimina márgenes */
+}
+
+/* Contenedor de la imagen */
+.cardI {
+    text-align: center; /* Centra la imagen */
+}
+
+.image1 {
+    width: 100%; /* Ancho completo */
+    height: auto; /* Ajusta la altura automáticamente */
+    border-bottom: 1px solid #ddd; /* Línea divisoria sutil debajo de la imagen */
+}
+
+/* Contenido de la tarjeta */
+.card-content {
+    padding: 15px; /* Espaciado interno */
+    color: #666; /* Color de texto gris */
+}
+
+.content p {
+    margin: 0; /* Elimina márgenes para los párrafos */
+    line-height: 1.5; /* Espaciado entre líneas */
+}
+
+/* Botones de la tarjeta */
+.button {
+    background-color: #007bff; /* Color de fondo azul */
+    color: #fff; /* Color de texto blanco */
+    border: none; /* Elimina el borde */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    margin: 5px; /* Espaciado entre botones */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Color de fondo más oscuro al pasar el ratón */
+}
+
+/*  mis cambios css
 .card{
     width: 1000px;
     height: auto;
@@ -30,3 +97,4 @@
     color: black;
     text-align: center;
 }
+ */

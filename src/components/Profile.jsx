@@ -29,6 +29,7 @@ function Profile() {
         )
         .then((response) => {
             if (!response.ok) {
+                console.log(data);
                 throw new Error("No se encontraror datos del usuario");
             }
             return response.json();

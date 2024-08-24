@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import ArticleCard from "./ArticleCard";
+import "../style/ArticleList.css"; // Asegúrate de importar el archivo CSS
 
 function ArticleList() {
     const [page, setPage] = useState(1);
@@ -21,14 +22,11 @@ function ArticleList() {
             ...filters,
         }).toString();
 
-        fetch(
-            `${import.meta.env.VITE_API_BASE_URL}/infosphere/articles/?${query}`,
-            {}
-        )
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/infosphere/articles/?${query}`, {})
             .then((response) => response.json())
             .then((data) => {
                 if (data.results) {
-                    setArticles((prevArticles) => [...prevArticles, ...data.results]);//actualiza arcicles
+                    setArticles((prevArticles) => [...prevArticles, ...data.results]);
                     setNextUrl(data.next);
                 }
             })
@@ -45,62 +43,54 @@ function ArticleList() {
     }, [page, filters]);
 
     useEffect(() => {
-        // Si la petición esta en proceso no creamos observador
         if (isLoading) return;
 
-        // Si hay otro observador definido lo desuscribimos
         if (observerRef.current) {
             observerRef.current.disconnect();
         }
 
-        // Creamos y referenciamos el observador de tarjetas actual
-        observerRef.current = new IntersectionObserver((cards) => {
-            // Observamos todas las tarjetas de la nueva página cargada
-            if (cards[0].isIntersecting && nextUrl) {
+        observerRef.current = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && nextUrl) {
                 setPage((prevPage) => prevPage + 1);
             }
         });
 
-        // Actualizamos la referencia al última tarjeta
         if (lastArticleElementRef.current) {
             observerRef.current.observe(lastArticleElementRef.current);
         }
     }, [isLoading, nextUrl]);
 
-
-    if (isError) return <p>Error al cargar los articulos.</p>;
-    if (!articles.length && !isLoading) return <p>No hay articulos disponibles</p>;
+    if (isError) return <p className="message">Error al cargar los artículos.</p>;
+    if (!articles.length && !isLoading) return <p className="message">No hay artículos disponibles</p>;
 
     return (
-        <div>
-            <div className="my-5">
-                <h2 className="title">Lista de Articulos</h2>
-                <ul>
-                    {articles.map((article, index) => {
-                        if (articles.length === index + 1) {
-                            return (
-                                <div
-                                    key={article.id}
-                                    ref={lastArticleElementRef}
-                                    className="column is-two-thirds"
-                                >
-                                    <ArticleCard article={article} />
-                                </div>
-                            );
-                        } else {
-                            return (
-                                <div
-                                    key={article.id}
-                                    className="column is-two-thirds"
-                                >
-                                    <ArticleCard article={article} />
-                                </div>
-                            );
-                        }
-                    })}
-                </ul>
-                {isLoading && <p>Cargando más articulos...</p>}
-            </div>
+        <div className="article-list-container">
+            <h2 className="title">Lista de Artículos</h2>
+            <ul>
+                {articles.map((article, index) => {
+                    if (articles.length === index + 1) {
+                        return (
+                            <div
+                                key={article.id}
+                                ref={lastArticleElementRef}
+                                className="article-card"
+                            >
+                                <ArticleCard article={article} />
+                            </div>
+                        );
+                    } else {
+                        return (
+                            <div
+                                key={article.id}
+                                className="article-card"
+                            >
+                                <ArticleCard article={article} />
+                            </div>
+                        );
+                    }
+                })}
+            </ul>
+            {isLoading && <p className="loading-message">Cargando más artículos...</p>}
         </div>
     );
 }

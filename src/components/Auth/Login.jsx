@@ -34,7 +34,7 @@ function Login() {
                     login(responseData.token);
                     if (responseData.token) {
                         fetch(
-                            `${import.meta.env.VITE_API_BASE_URL}/users/profiles/profile_data/`,
+                            `${import.meta.env.VITE_API_BASE_URL}users/profiles/profile_data/`,
                             {
                                 method: "GET",
                                 headers: {

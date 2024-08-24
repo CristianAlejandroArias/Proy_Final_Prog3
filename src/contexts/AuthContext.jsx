@@ -16,7 +16,7 @@ function reducer(state, action) {
         case ACTIONS.LOGIN:
             return {
                 ...state,
-                user__id: action.payload.use__id,//lo voy a necesitar para el perfil
+                user__id: action.payload.user__id,
                 token: action.payload.token,
                 isAuthenticated: true,
             };
@@ -31,24 +31,28 @@ function reducer(state, action) {
 
 function AuthProvider({ children }) {
     const [state, dispatch] = useReducer(reducer, {
-        token: localStorage.getItem("authToken"),
-        user__id: localStorage.getItem("user__id"),
-        isAuthenticated: localStorage.getItem("authToken") ? true : false,
+        isAuthenticated: localStorage.getItem("taskAuth") ? true : false,
+        user__id: localStorage.getItem("user__id") ,
+        token: localStorage.getItem("taskAuth") ,
+        
     });
     const navigate = useNavigate();
     const location = useLocation();
 
     const actions = {
-        login: (token,user__id) => {
-            dispatch({ type: ACTIONS.LOGIN, payload: token });
-            localStorage.setItem("authToken", token);
-            localStorage.setItem("user__id", user__id)
+        login: (token, user__id) => {
+            dispatch({ 
+                type: ACTIONS.LOGIN, 
+                payload: {token, user__id} 
+            });
+            localStorage.setItem("taskAuth", token);
+            localStorage.setItem("user__id", user__id);
             const origin = location.state?.from?.pathname || "/";
             navigate(origin);
         },
         logout: () => {
             dispatch({ type: ACTIONS.LOGOUT });
-            localStorage.removeItem("authToken");
+            localStorage.removeItem("taskAuth");
             localStorage.removeItem("user__id");
         },
     };
@@ -63,7 +67,7 @@ function AuthProvider({ children }) {
 function useAuth(type) {
     const context = useContext(AuthContext);
     if (context === undefined) {
-        throw new Error("useAuth must be used within an AuthProvider");
+        throw new Error("useAuth debe ser usado con AuthProvider");
     }
     return context[type];
 }

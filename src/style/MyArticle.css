@@ -1,0 +1,46 @@
+/* Contenedor principal */
+.my-5 {
+    padding: 20px; /* Espaciado interno */
+    background-color: #f9f9f9; /* Fondo gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+/* Título de la lista */
+.title {
+    font-size: 1.5rem; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Negrita para el título */
+    color: #333; /* Color oscuro del texto */
+    margin-bottom: 20px; /* Espaciado inferior */
+    text-align: center; /* Centra el título */
+}
+
+/* Lista de artículos */
+ul {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el espaciado interno */
+    margin: 0; /* Elimina el margen */
+}
+
+/* Tarjeta del artículo */
+.column {
+    margin-bottom: 20px; /* Espaciado inferior entre tarjetas */
+    padding: 10px; /* Espaciado interno */
+    max-width: 300px; /* Ancho máximo de las tarjetas */
+    box-sizing: border-box; /* Incluye el padding y border en el ancho total */
+}
+
+/* Imagen en la tarjeta */
+.image1 {
+    max-width: 100%; /* Ancho máximo de la imagen al 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 4px; /* Bordes redondeados en la imagen */
+}
+
+/* Maneja el caso cuando no hay artículos disponibles */
+p {
+    font-size: 1rem; /* Tamaño de fuente */
+    color: #666; /* Color gris para el texto */
+    text-align: center; /* Centra el texto */
+}

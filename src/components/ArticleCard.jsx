@@ -1,66 +1,46 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from "../contexts/AuthContext";
-import "../style/ArticleCard.css"
+import "../style/ArticleCard.css"; // Importa el archivo CSS
 
 function ArticleCard({ article }) {
-
-    const { title, content, image, author } = article || defaultArticle;
-    const navigate = useNavigate()
+    const { title, content, image, author } = article || {};
+    const navigate = useNavigate();
     const selectArticle = () => {
-        navigate(`/article/${article.id}`)
+        navigate(`/article/${article.id}`);
     }
 
-    const { user__id } = useAuth("state")
-    const { token } = useAuth("actions")
+    const { user__id } = useAuth("state");
     const userIdAsNumber = parseInt(user__id, 10);
-    const isVisible = (userIdAsNumber == author);
+    const isVisible = (userIdAsNumber === author);
 
     return (
-        <div className="card" onClick={selectArticle} >
-                    <div className="media-content">
-                        {/* Mostrar el título */}
-                        <p className="title">
-                            {title}
-                        </p>
-                    </div>
+        <div className="card" onClick={selectArticle}>
+            <div className="media-content">
+                <p className="title">{title}</p>
+            </div>
             <div className="cardI">
-                {/* Mostrar la imagen si existe */}
                 {image && (
-                    <figure >
-                        <img className="image1" 
-                            src={image}
-                            alt={title}
-                        />
+                    <figure>
+                        <img className="image1" src={image} alt={title} />
                     </figure>
                 )}
             </div>
             <div className="card-content">
-                <div className="media">
-                </div>
                 <div className="content">
-                    {/* Mostrar el contenido */}
                     <p>{content}</p>
                 </div>
-
             </div>
-                <div>
+            <div>
                 {isVisible && (
-                    <button className="button">
-                        Modificar
-                    </button>
+                    <>
+                        <button className="button">Modificar</button>
+                        <button className="button">Eliminar</button>
+                    </>
                 )}
-                {isVisible && (
-                    <button className="button">
-                        Eliminar
-                    </button>
-                )}
-
-                </div>
+            </div>
         </div>
     );
 }
-
-
 
 export default ArticleCard;
