@@ -5,6 +5,7 @@ import "../style/ArticleCard.css"; // Importa el archivo CSS
 
 function ArticleCard({ article }) {
     const { title, content, image, author } = article || {};
+    
     const navigate = useNavigate();
     const selectArticle = () => {
         navigate(`/article/${article.id}`);

@@ -5,7 +5,7 @@ import ViewArticleCard from "./ViewArticleCard ";
 import ArticleDetail from "./ArticleDetail";
 
 const fetchArticleData = async (articleId) => {
-    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/infosphere/articles/${articleId}`);
+    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}infosphere/articles/${articleId}`);
     const data = await response.json();
     return data;
 };

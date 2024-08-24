@@ -22,7 +22,7 @@ function ArticleList() {
             ...filters,
         }).toString();
 
-        fetch(`${import.meta.env.VITE_API_BASE_URL}/infosphere/articles/?${query}`, {})
+        fetch(`${import.meta.env.VITE_API_BASE_URL}infosphere/articles/?${query}`, {})
             .then((response) => response.json())
             .then((data) => {
                 if (data.results) {
