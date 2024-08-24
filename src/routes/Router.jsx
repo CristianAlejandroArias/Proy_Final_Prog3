@@ -27,7 +27,7 @@ const Router = createBrowserRouter([
                 ),
             },
             {
-                path: "my/article",
+                path: "myarticle",
                 element: (
                     <ProtectedRoute>
                         <MyArticle/>

@@ -24,7 +24,7 @@ function NavBar() {
                         <Link className="navbar-item" to="/articles">
                             Cargar un artículo
                         </Link>
-                        <Link className="navbar-item" to="/my/article">
+                        <Link className="navbar-item" to="/myarticle">
                             Mis Artículos
                         </Link>
 
