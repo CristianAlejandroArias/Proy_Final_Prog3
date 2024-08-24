@@ -1,0 +1,35 @@
+/* navbar.css */
+.navbar {
+    background-color: #a5b6c7; /* Gris claro */
+    padding: 10px;
+}
+
+.navbar-item {
+    margin: 0 15px; /* Espaciado entre los enlaces */
+    text-decoration: none;
+    color: #333; /* Color de texto gris oscuro */
+}
+
+.navbar-item:hover {
+    text-decoration: underline;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 15px; /* Espaciado entre el botón y los enlaces */
+}
+
+button:hover {
+    background-color: #0056b3; /* Color de fondo del botón al pasar el cursor */
+}

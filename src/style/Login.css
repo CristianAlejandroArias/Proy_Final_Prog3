@@ -1,0 +1,71 @@
+/* Login.css */
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa el alto de la ventana del navegador */
+    background-color: #e0f7fa; /* Color celeste claro de fondo */
+}
+
+.login-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 400px; /* Ancho máximo del formulario */
+    align-content: center;
+}
+
+.field {
+    margin-bottom: 15px;
+    align-content: center;
+}
+
+label {
+    color: #00796b;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.control {
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00796b; /* Color de los íconos */
+}
+
+.button {
+    background-color: #00bcd4; /* Color celeste para el botón */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    align-content: center;
+}
+
+.button:hover {
+    background-color: #0097a7; /* Color más oscuro al pasar el cursor */
+}
+
+p {
+    color: red; /* Color para mensajes de error */
+    text-align: center;
+    margin-top: 10px;
+}

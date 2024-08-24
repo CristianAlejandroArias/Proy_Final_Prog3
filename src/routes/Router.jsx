@@ -7,6 +7,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import Login from "../components/Auth/Login";
 import MyArticle from "../components/MyArticle";
 import ShowMyArticle from "../components/ShowMyArticle";
+import Profile from "../components/Profile";
 
 
 const Router = createBrowserRouter([
@@ -41,6 +42,14 @@ const Router = createBrowserRouter([
             {
                 path: "article/:id",
                 element: <ShowMyArticle/>
+            },
+            {
+                path: "profile",
+                element: (
+                    <ProtectedRoute>
+                        <Profile />
+                    </ProtectedRoute>
+                ),
             }, 
 
         ],

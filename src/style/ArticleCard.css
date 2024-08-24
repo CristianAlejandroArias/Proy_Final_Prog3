@@ -1,7 +1,7 @@
 .card{
     width: 1000px;
     height: auto;
-    background-color:brown;
+    background-color:#a5b6c7;
     display: flex;
     flex-direction: column;
     justify-content: center;
