@@ -74,8 +74,7 @@ function MyArticle() {
     if (!articles.length && !isLoading) return <p>No hay artículos disponibles</p>;
 
     return (
-        <div>
-            <div className="my-5">
+            <div className="myContenedor">
                 <h2 className="title">Lista de Artículos</h2>
                 <ul>
                     {articles.map((article, index) => {
@@ -103,7 +102,7 @@ function MyArticle() {
                 </ul>
                 {isLoading && <p>Cargando más artículos...</p>}
             </div>
-        </div>
+
     );
 }
 

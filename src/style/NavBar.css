@@ -1,5 +1,6 @@
 /* navbar.css */
 .navbar {
+    
     background-color: #a5b6c7; /* Gris claro */
     padding: 10px;
 }
@@ -32,4 +33,10 @@ button {
 
 button:hover {
     background-color: #0056b3; /* Color de fondo del botón al pasar el cursor */
+}
+
+.columns{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }

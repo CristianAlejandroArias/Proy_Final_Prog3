@@ -36,7 +36,7 @@ function NavBar() {
                             <>
                                 <Link className="navbar-item" to="profile">
                                     Mi Perfil
-                                </Link>,
+                                </Link>
 
                                 <Link className="navbar-item" onClick={handleLogout}>
                                     Cerrar Sesión

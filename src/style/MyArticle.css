@@ -1,9 +1,9 @@
 /* Contenedor principal */
-.my-5 {
+.myContenedor {
     padding: 20px; /* Espaciado interno */
     background-color: #f9f9f9; /* Fondo gris claro */
     border-radius: 8px; /* Bordes redondeados */
-    max-width: 1200px; /* Ancho máximo del contenedor */
+    width: 800px; /* Ancho máximo del contenedor */
     margin: 0 auto; /* Centra el contenedor */
 }
 
@@ -27,7 +27,7 @@ ul {
 .column {
     margin-bottom: 20px; /* Espaciado inferior entre tarjetas */
     padding: 10px; /* Espaciado interno */
-    max-width: 300px; /* Ancho máximo de las tarjetas */
+    
     box-sizing: border-box; /* Incluye el padding y border en el ancho total */
 }
 

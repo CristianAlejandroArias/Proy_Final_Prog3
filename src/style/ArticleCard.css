@@ -1,5 +1,8 @@
 /* Estilo general de la tarjeta */
 .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #e0f7fa; /* Fondo blanco */
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
@@ -32,9 +35,10 @@
 }
 
 .image1 {
-    width: 100%; /* Ancho completo */
+    width: 400px; /* Ancho completo */
     height: auto; /* Ajusta la altura automáticamente */
     border-bottom: 1px solid #ddd; /* Línea divisoria sutil debajo de la imagen */
+    
 }
 
 /* Contenido de la tarjeta */
