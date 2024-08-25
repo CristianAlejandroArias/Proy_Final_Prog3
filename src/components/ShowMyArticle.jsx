@@ -13,16 +13,13 @@ const fetchArticleData = async (articleId) => {
 
 function ShowMyArticle() {
     const { id } = useParams();//Aqui llega el id del articulo a mostrar
-    console.log({ id })
     const articleId = id
-    console.log({articleId})
     const [article, setArticle] = useState(null);
 
     useEffect(() => {
         const doFetch = async () => {
             try {
                 const fetchedArticle = await fetchArticleData(articleId);
-                console.log(fetchedArticle)
                 setArticle(fetchedArticle);
             } catch (error) {
                 console.error('Error fetching article:', error);

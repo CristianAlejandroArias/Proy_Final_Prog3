@@ -68,37 +68,59 @@
     background-color: #0056b3; /* Color de fondo más oscuro al pasar el ratón */
 }
 
-/*  mis cambios css
-.card{
-    width: 1000px;
-    height: auto;
-    background-color:#a5b6c7;
+.modal.is-active {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
-}
-.button{
-    margin: 10px;
-    background-color: aquamarine;
-}
-
-.image1{
-    width: 500px;
-    max-height: 500px;   
-}
-
-.cardI{
-    width: 100%;
-    display: flex;
     justify-content: center;
-
 }
 
-.title{
-    font-size: 2rem;
-    color: black;
+.modal-background {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #e0f7fa; /* Color de fondo celeste */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.box {
     text-align: center;
 }
- */
+
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit-button {
+    background-color: #f44336; /* Color rojo para el botón de eliminar */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background-color: #bdbdbd; /* Color gris para el botón de cancelar */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}

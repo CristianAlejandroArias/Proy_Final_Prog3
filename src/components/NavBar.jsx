@@ -8,8 +8,6 @@ function NavBar() {
 
 
     const handleLogout = () => {
-        console.log('isAuthenticaded:', isAuthenticated);
-        console.log('Pasa por Logout');
         logout();
     };
 

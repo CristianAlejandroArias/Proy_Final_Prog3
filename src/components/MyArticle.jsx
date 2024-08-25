@@ -73,6 +73,11 @@ function MyArticle() {
     if (isError) return <p>Error al cargar los artículos.</p>;
     if (!articles.length && !isLoading) return <p>No hay artículos disponibles</p>;
 
+    const handleDelete = (idArticle) => {//*
+        setArticles((prevArticles) => prevArticles.filter((article) => article.id !== idArticle));
+    };
+
+
     return (
             <div className="myContenedor">
                 <h2 className="title">Lista de Artículos</h2>
@@ -84,8 +89,12 @@ function MyArticle() {
                                     key={article.id}
                                     ref={lastArticleElementRef}
                                     className="column is-two-thirds"
+                                    onDelete={handleDelete}
                                 >
-                                    <ArticleCard article={article} />
+                                    <ArticleCard 
+                                    article={article} 
+                                    onDelete={handleDelete}
+                                    />
                                 </div>
                             );
                         } else {
@@ -94,7 +103,10 @@ function MyArticle() {
                                     key={article.id}
                                     className="column is-two-thirds"
                                 >
-                                    <ArticleCard article={article} />
+                                    <ArticleCard 
+                                    article={article}
+                                    onDelete={handleDelete}
+                                     />
                                 </div>
                             );
                         }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import ArticleCard from "./ArticleCard";
-import "../style/ArticleList.css"; // Asegúrate de importar el archivo CSS
+import "../style/ArticleList.css"; 
 
 function ArticleList() {
     const [page, setPage] = useState(1);
@@ -63,6 +63,10 @@ function ArticleList() {
     if (isError) return <p className="message">Error al cargar los artículos.</p>;
     if (!articles.length && !isLoading) return <p className="message">No hay artículos disponibles</p>;
 
+    const handleDelete = (idArticle) => {//*
+        setArticles((prevArticles) => prevArticles.filter((article) => article.id !== idArticle));
+    };
+    
     return (
         <div className="article-list-container">
             <h2 className="title">Lista de Artículos</h2>
@@ -75,7 +79,10 @@ function ArticleList() {
                                 ref={lastArticleElementRef}
                                 className="article-card"
                             >
-                                <ArticleCard article={article} />
+                                <ArticleCard 
+                                article={article}
+                                onDelete={handleDelete}
+                                />
                             </div>
                         );
                     } else {
@@ -84,7 +91,10 @@ function ArticleList() {
                                 key={article.id}
                                 className="article-card"
                             >
-                                <ArticleCard article={article} />
+                                <ArticleCard 
+                                article={article} 
+                                onDelete={handleDelete}
+                                />
                             </div>
                         );
                     }
