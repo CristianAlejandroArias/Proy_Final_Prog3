@@ -1,15 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
-import "../style/ArticleForm.css"; // Asegúrate de importar el archivo CSS
+import { useNavigate, useLocation} from "react-router-dom";
+import "../style/ArticleForm.css"; 
 
 export default function ArticleForm() {
     const { token } = useAuth("state");
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const articleExisting = location.state?.article || null;
+    console.log(articleExisting)
 
     const [articleData, setArticleData] = useState({ title: "", content: "" });
     const [articleImage, setArticleImage] = useState(null);
     const [submitting, setSubmitting] = useState(false);
+
+    useEffect(() => {
+        if (articleExisting){
+            setArticleData({
+                title: articleExisting.title,
+                content: articleExisting.content,                
+            })
+        }
+    },[articleExisting])
 
     function handleInputChange(event) {
         setArticleData({
@@ -29,8 +42,14 @@ export default function ArticleForm() {
             newForm.append("image", articleImage);
         }
 
-        fetch(`${import.meta.env.VITE_API_BASE_URL}infosphere/articles/`, {
-            method: "POST",
+        const methodSelect = articleExisting ? 'PATCH': 'POST';
+        const urlSelect = articleExisting 
+            ? `infosphere/articles/${articleExisting.id}`
+            :'infosphere/articles/';
+
+        
+        fetch(`${import.meta.env.VITE_API_BASE_URL}${urlSelect}`, {
+            method: methodSelect,
             headers: {
                 Authorization: `Token ${token}`,
             },
@@ -38,12 +57,12 @@ export default function ArticleForm() {
         })
         .then((response) => {
             if (!response.ok) {
-                throw new Error("No se pudo crear el artículo");
+                throw new Error("No se pudo realizar la operacion.");
             }
             return response.json();
         })
         .then((data) => {
-            alert('El artículo fue creado con éxito.');
+            alert('Operacio realizada con éxito.');
             navigate('/');
         })
         .catch((error) => {

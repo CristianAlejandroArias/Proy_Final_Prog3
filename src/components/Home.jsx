@@ -3,12 +3,18 @@
 import ArticleList from "./ArticleList";
 //import MyArticle from "./MyArticle";
 
-export default function Home() {
+const homeStyle = {
+    color: 'black',
+    textAlign: 'center'
+};
 
+function Home() {
     return (
         <div>
-            <h1>Bienvenido al home.</h1>
-            <ArticleList/>
+            <h1 style={homeStyle}>Bienvenido al home.</h1>
+            <ArticleList />
         </div>
     );
 }
+
+export default Home;

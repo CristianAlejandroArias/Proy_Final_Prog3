@@ -50,7 +50,7 @@ function MyArticle() {
 
     useEffect(() => {
         doFetch();
-    }, [page, filters]);
+    }, [page, filters, user__id]);
 
     useEffect(() => {
         if (isLoading) return;
@@ -80,7 +80,7 @@ function MyArticle() {
 
     return (
             <div className="myContenedor">
-                <h2 className="title">Lista de Artículos</h2>
+                <h2 className="title">Mis Artículos</h2>
                 <ul>
                     {articles.map((article, index) => {
                         if (articles.length === index + 1) {

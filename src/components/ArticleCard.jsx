@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from "../contexts/AuthContext";
 import "../style/ArticleCard.css";
@@ -20,12 +20,12 @@ function ArticleCard({ article, onDelete }) {
     const handleDelete = async () => {//*
         try {
             const response = await fetch(
-                `${import.meta.env.VITE_API_BASE_URL}/infosphere/articles/${article.id}/`,
+                `${import.meta.env.VITE_API_BASE_URL}infosphere/articles/${article.id}/`,
                 {
                     method: "DELETE",
                     headers: {
                         "Content-Type": "application/json",
-                        Authorization: `Token ${token}`, // Asegúrate de que `token` esté definido
+                        Authorization: `Token ${token}`,
                     },
                 }
             );
@@ -43,7 +43,8 @@ function ArticleCard({ article, onDelete }) {
     };
 
     const handleEdit = () => {//*
-        alert("Editar Articulos");
+        console.log(article)
+        navigate('/articles',{ state: { article } } )
     };
 
     return (

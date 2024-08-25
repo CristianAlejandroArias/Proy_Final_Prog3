@@ -34,7 +34,6 @@ function ShowMyArticle() {
 
     return (
         <div>
-
             <ArticleDetail article={article}/>
         </div>
     );

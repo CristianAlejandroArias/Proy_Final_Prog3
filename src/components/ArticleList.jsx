@@ -69,7 +69,7 @@ function ArticleList() {
     
     return (
         <div className="article-list-container">
-            <h2 className="title">Lista de Artículos</h2>
+            {/* <h2 className="title">Lista de Artículos1</h2> */}
             <ul>
                 {articles.map((article, index) => {
                     if (articles.length === index + 1) {
