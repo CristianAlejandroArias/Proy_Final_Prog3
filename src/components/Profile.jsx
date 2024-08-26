@@ -29,7 +29,6 @@ function Profile() {
         )
         .then((response) => {
             if (!response.ok) {
-                console.log(data);
                 throw new Error("No se encontraror datos del usuario");
             }
             return response.json();
@@ -54,7 +53,6 @@ function Profile() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(userData.first_name);
         const updatedData = {
             first_name: userData.first_name,
             last_name: userData.last_name,
@@ -82,11 +80,10 @@ function Profile() {
             })
             .then((data) => {
                 setUserData(data);
-                console.log("Perfil actualizado con exito");
                 navigate("/")
             });
         
-        // Aquí iría la lógica para enviar el formulario al backend.
+
     };
 
     if (loading) return <p>Cargando perfil...</p>;

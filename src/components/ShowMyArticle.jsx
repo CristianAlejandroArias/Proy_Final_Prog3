@@ -1,7 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
-import ArticleCard from './ArticleCard';
-import ViewArticleCard from "./ViewArticleCard ";
 import ArticleDetail from "./ArticleDetail";
 
 const fetchArticleData = async (articleId) => {
@@ -12,7 +10,7 @@ const fetchArticleData = async (articleId) => {
 
 
 function ShowMyArticle() {
-    const { id } = useParams();//Aqui llega el id del articulo a mostrar
+    const { id } = useParams();
     const articleId = id
     const [article, setArticle] = useState(null);
 
@@ -29,7 +27,6 @@ function ShowMyArticle() {
         doFetch();
     }, [articleId]); 
 
-    // Mostrar un indicador de carga si el artículo aún no se ha cargado
     if (!article) return <p>Loading...</p>;
 
     return (

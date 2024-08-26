@@ -63,13 +63,12 @@ function ArticleList() {
     if (isError) return <p className="message">Error al cargar los artículos.</p>;
     if (!articles.length && !isLoading) return <p className="message">No hay artículos disponibles</p>;
 
-    const handleDelete = (idArticle) => {//*
+    const handleDelete = (idArticle) => {
         setArticles((prevArticles) => prevArticles.filter((article) => article.id !== idArticle));
     };
     
     return (
         <div className="article-list-container">
-            {/* <h2 className="title">Lista de Artículos1</h2> */}
             <ul>
                 {articles.map((article, index) => {
                     if (articles.length === index + 1) {

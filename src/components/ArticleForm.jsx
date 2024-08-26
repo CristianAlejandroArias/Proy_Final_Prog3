@@ -9,7 +9,6 @@ export default function ArticleForm() {
     const location = useLocation();
 
     const articleExisting = location.state?.article || null;
-    console.log(articleExisting)
 
     const [articleData, setArticleData] = useState({ title: "", content: "" });
     const [articleImage, setArticleImage] = useState(null);
@@ -33,7 +32,6 @@ export default function ArticleForm() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log("Enviando formulario.");
 
         const newForm = new FormData();
         newForm.append("title", articleData.title);

@@ -1,71 +1,71 @@
-/* Estilo general de la tarjeta */
+
 .card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #e0f7fa; /* Fondo blanco */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    margin-bottom: 20px; /* Espaciado inferior */
-    overflow: hidden; /* Evita que los elementos salgan de la tarjeta */
-    cursor: pointer; /* Cambia el cursor al pasar sobre la tarjeta */
-    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+    background-color: #e0f7fa; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; 
+    overflow: hidden; 
+    cursor: pointer; 
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.02); /* Escala ligeramente la tarjeta al pasar el ratón */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el ratón */
+    transform: scale(1.02); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
 }
 
-/* Contenido de la tarjeta */
+
 .media-content {
-    padding: 15px; /* Espaciado interno */
+    padding: 15px; 
 }
 
 .title {
-    font-size: 1.25rem; /* Tamaño de fuente del título */
-    font-weight: bold; /* Negrita para el título */
-    color: #333; /* Color oscuro del texto */
-    margin: 0; /* Elimina márgenes */
+    font-size: 1.25rem; 
+    font-weight: bold; 
+    color: #333; 
+    margin: 0; 
 }
 
-/* Contenedor de la imagen */
+
 .cardI {
-    text-align: center; /* Centra la imagen */
+    text-align: center; 
 }
 
 .image1 {
-    width: 400px; /* Ancho completo */
-    height: auto; /* Ajusta la altura automáticamente */
-    border-bottom: 1px solid #ddd; /* Línea divisoria sutil debajo de la imagen */
+    width: 400px; 
+    height: auto; 
+    border-bottom: 1px solid #ddd; 
     
 }
 
-/* Contenido de la tarjeta */
+
 .card-content {
-    padding: 15px; /* Espaciado interno */
-    color: #666; /* Color de texto gris */
+    padding: 15px; 
+    color: #666; 
 }
 
 .content p {
-    margin: 0; /* Elimina márgenes para los párrafos */
-    line-height: 1.5; /* Espaciado entre líneas */
+    margin: 0; 
+    line-height: 1.5; 
 }
 
-/* Botones de la tarjeta */
+
 .button {
-    background-color: #007bff; /* Color de fondo azul */
-    color: #fff; /* Color de texto blanco */
-    border: none; /* Elimina el borde */
-    border-radius: 4px; /* Bordes redondeados */
-    padding: 10px 15px; /* Espaciado interno */
-    margin: 5px; /* Espaciado entre botones */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    transition: background-color 0.3s; /* Transición suave */
+    background-color: #007bff; 
+    color: #fff; 
+    border: none; 
+    border-radius: 4px; 
+    padding: 10px 15px; 
+    margin: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
 }
 
 .button:hover {
-    background-color: #0056b3; /* Color de fondo más oscuro al pasar el ratón */
+    background-color: #0056b3; 
 }
 
 .modal.is-active {
@@ -79,7 +79,7 @@
 }
 
 .modal-content {
-    background-color: #e0f7fa; /* Color de fondo celeste */
+    background-color: #e0f7fa; 
     border-radius: 10px;
     padding: 20px;
     max-width: 400px;
@@ -97,7 +97,7 @@
 }
 
 .submit-button {
-    background-color: #f44336; /* Color rojo para el botón de eliminar */
+    background-color: #f44336; 
     color: white;
     border: none;
     padding: 10px 20px;
@@ -106,7 +106,7 @@
 }
 
 .cancel-button {
-    background-color: #bdbdbd; /* Color gris para el botón de cancelar */
+    background-color: #bdbdbd; 
     color: white;
     border: none;
     padding: 10px 20px;

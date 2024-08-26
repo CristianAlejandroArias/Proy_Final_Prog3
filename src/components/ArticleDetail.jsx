@@ -2,6 +2,7 @@ import React from 'react';
 import '../index.css';
 import imageDefaull from '../assets/images/imageDefaull.png';
 import { useNavigate } from 'react-router-dom';
+import "../style/ArticleDetail.css";
 
 function ArticleDetail({article}) {
 
@@ -14,10 +15,8 @@ function ArticleDetail({article}) {
     return (
         <div className="card">
             <div className="card-content">
-                {/* Mostrar el título */}
                 <h2 className="title">{article.title}</h2>
 
-                {/* Mostrar la imagen si existe */}
                 <figure className="image">
                     <img 
                         src={imageSrc}
@@ -26,7 +25,6 @@ function ArticleDetail({article}) {
                     />
                 </figure>
 
-                {/* Mostrar el contenido */}
                 <div className="content">
                     <p>{article.content}</p>
                 </div>

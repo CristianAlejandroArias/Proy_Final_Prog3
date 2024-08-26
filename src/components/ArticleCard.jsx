@@ -5,7 +5,7 @@ import "../style/ArticleCard.css";
 
 function ArticleCard({ article, onDelete }) {
     const { title, content, image, author } = article || {};
-    const [isModalOpen, setIsModalOpen] = useState(false);//*
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const navigate = useNavigate();
     const selectArticle = () => {
@@ -13,11 +13,11 @@ function ArticleCard({ article, onDelete }) {
     }
 
     const { user__id } = useAuth("state");
-    const { token } = useAuth("state");//*
+    const { token } = useAuth("state");
     const userIdAsNumber = parseInt(user__id, 10);
     const isVisible = (userIdAsNumber === author);
 
-    const handleDelete = async () => {//*
+    const handleDelete = async () => {
         try {
             const response = await fetch(
                 `${import.meta.env.VITE_API_BASE_URL}infosphere/articles/${article.id}/`,
@@ -42,8 +42,7 @@ function ArticleCard({ article, onDelete }) {
         }
     };
 
-    const handleEdit = () => {//*
-        console.log(article)
+    const handleEdit = () => {
         navigate('/articles',{ state: { article } } )
     };
 
@@ -93,7 +92,7 @@ function ArticleCard({ article, onDelete }) {
                 <div className={`modal ${isModalOpen ? "is-active" : ""}`}
                     onClick={(e) => e.stopPropagation()}>
                     <div className="modal-background">
-                        {/* eliminar este div*/}
+
                     </div>
                     <div className="modal-content">
                         <div className="box">

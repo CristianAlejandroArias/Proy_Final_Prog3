@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import ArticleCard from "./ArticleCard";
 import { useAuth } from "../contexts/AuthContext";
-import "../style/MyArticle.css"; // Importa el archivo CSS
+import "../style/MyArticle.css";
 
 function MyArticle() {
     const { user__id } = useAuth("state");

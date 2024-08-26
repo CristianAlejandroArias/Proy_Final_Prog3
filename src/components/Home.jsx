@@ -1,7 +1,5 @@
 
-//import ArticleCard from "./ArticleCard";
 import ArticleList from "./ArticleList";
-//import MyArticle from "./MyArticle";
 
 const homeStyle = {
     color: 'black',

@@ -1,44 +1,44 @@
-/* Contenedor principal de la lista de artículos */
+
 .article-list-container {
-    background-color: #e0f7fa; /* Fondo gris claro */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 20px; /* Espaciado interno */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    max-width: 800px; /* Ancho máximo */
-    margin: 0 auto; /* Centra el contenedor */
+    background-color: #e0f7fa; 
+    border-radius: 8px; 
+    padding: 20px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    max-width: 800px; 
+    margin: 0 auto; 
 }
 
-/* Título de la lista de artículos */
+
 .title {
-    color: #333; /* Color del texto oscuro */
-    text-align: center; /* Centra el texto */
-    margin-bottom: 20px; /* Espaciado inferior */
-    font-size: 24px; /* Tamaño de fuente del título */
+    color: #333; 
+    text-align: center; 
+    margin-bottom: 20px; 
+    font-size: 24px; 
 }
 
-/* Contenedor de cada artículo */
+
 .article-card {
-    background-color: #ffffff; /* Fondo blanco para cada artículo */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    padding: 15px; /* Espaciado interno */
-    margin-bottom: 15px; /* Espaciado inferior entre artículos */
-    display: flex; /* Usa flexbox para contenido interno */
-    flex-direction: column; /* Coloca el contenido en columna */
+    background-color: #ffffff; 
+    border-radius: 8px; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+    padding: 15px;
+    margin-bottom: 15px; 
+    display: flex; 
+    flex-direction: column; 
 }
 
-/* Contenedor del mensaje de carga o error */
+
 .message {
-    text-align: center; /* Centra el texto */
-    color: #0000ff; /* Color rojo para errores */
-    font-size: 18px; /* Tamaño de fuente del mensaje */
-    margin-top: 20px; /* Espaciado superior */
+    text-align: center; 
+    color: #0000ff;
+    font-size: 18px; 
+    margin-top: 20px; 
 }
 
-/* Estilo de los mensajes de carga */
+
 .loading-message {
-    color: #007bff; /* Color azul para el mensaje de carga */
-    font-size: 18px; /* Tamaño de fuente del mensaje */
+    color: #007bff;
+    font-size: 18px; 
 }
 .p {
     color: #0000ff;

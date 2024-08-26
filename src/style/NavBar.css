@@ -1,14 +1,14 @@
-/* navbar.css */
+
 .navbar {
     
-    background-color: #a5b6c7; /* Gris claro */
+    background-color: #a5b6c7; 
     padding: 10px;
 }
 
 .navbar-item {
-    margin: 0 15px; /* Espaciado entre los enlaces */
+    margin: 0 15px; 
     text-decoration: none;
-    color: #333; /* Color de texto gris oscuro */
+    color: #333; 
 }
 
 .navbar-item:hover {
@@ -22,17 +22,17 @@
 }
 
 button {
-    background-color: #007bff; /* Color de fondo del botón */
+    background-color: #007bff; 
     color: white;
     border: none;
     padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
-    margin-left: 15px; /* Espaciado entre el botón y los enlaces */
+    margin-left: 15px; 
 }
 
 button:hover {
-    background-color: #0056b3; /* Color de fondo del botón al pasar el cursor */
+    background-color: #0056b3; 
 }
 
 .columns{

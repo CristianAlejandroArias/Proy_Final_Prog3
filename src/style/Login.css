@@ -1,10 +1,10 @@
-/* Login.css */
+
 .section {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ocupa el alto de la ventana del navegador */
-    background-color: #e0f7fa; /* Color celeste claro de fondo */
+    height: 100vh; 
+    background-color: #e0f7fa; 
 }
 
 .login-container {
@@ -13,7 +13,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 100%;
-    max-width: 400px; /* Ancho máximo del formulario */
+    max-width: 400px; 
     align-content: center;
 }
 
@@ -48,11 +48,11 @@ label {
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
-    color: #00796b; /* Color de los íconos */
+    color: #00796b; 
 }
 
 .button {
-    background-color: #00bcd4; /* Color celeste para el botón */
+    background-color: #00bcd4; 
     color: white;
     border: none;
     border-radius: 4px;
@@ -63,11 +63,11 @@ label {
 }
 
 .button:hover {
-    background-color: #0097a7; /* Color más oscuro al pasar el cursor */
+    background-color: #0097a7; 
 }
 
 p {
-    color: red; /* Color para mensajes de error */
+    color: red; 
     text-align: center;
     margin-top: 10px;
 }
